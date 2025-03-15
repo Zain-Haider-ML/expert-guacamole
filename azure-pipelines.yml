@@ -5,7 +5,7 @@ trigger:
       - dev   # Runs CI on the dev branch
 
 pool:
-  vmImage: 'ubuntu-latest'  # Use the latest Ubuntu image
+  vmImage: 'Default'  # Use your self-hosted agent pool name
 
 steps:
   - task: UsePythonVersion@0
