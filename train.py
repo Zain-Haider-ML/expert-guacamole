@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(
 # Function to load the Wine dataset
 def load_dataset():
     """
-    Loads the Wine dataset using sklearn's datasets module.
+    Loads the Wine dataset using sklearn's datasets modules.
 
     Returns:
         X (numpy array): Feature matrix containing the attributes of the wines.
