@@ -1,10 +1,7 @@
-# Import necessary libraries
-import pandas as pd  # For data manipulation (useful in larger datasets)
-import numpy as np  # For numerical operations
-import logging  # For logging
-from sklearn import datasets  # For loading built-in datasets
-from sklearn.model_selection import train_test_split  # For splitting data into training and test sets
-from sklearn.ensemble import RandomForestClassifier  # For the Random Forest classifier
+import logging
+from sklearn import datasets
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
 
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -43,15 +40,15 @@ def split_data(x, y, test_size=0.2, random_state=42):
         x_train, x_test, y_train, y_test (numpy arrays): Split datasets for training and testing.
     """
     logging.info("Splitting data into training and test sets...")
-    x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=test_size, random_state=random_state)
+    xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=test_size, random_state=random_state)
     
-    return x_train, x_test, y_train, y_test
+    return xtrain, xtest, ytrain, ytest
 
 # Load dataset
-x, y = load_dataset()
+features, labels = load_dataset()
 
 # Split the data into training and test sets
-x_train, x_test, y_train, y_test = split_data(x, y)
+x_train, x_test, y_train, y_test = split_data(features, labels)
 
 # Initialize the RandomForestClassifier model
 rf = RandomForestClassifier(random_state=42)
@@ -60,8 +57,8 @@ rf = RandomForestClassifier(random_state=42)
 logging.info("Training RandomForestClassifier model...")
 rf.fit(x_train, y_train)
 
-# Log the shapes of the split datasets
-logging.info(f"Training data shape: {x_train.shape}, Test data shape: {x_test.shape}")
-logging.info(f"Training target shape: {y_train.shape}, Test target shape: {y_test.shape}")
+# Log the shapes of the split datasets (lazy formatting to resolve W1203)
+logging.info("Training data shape: %s, Test data shape: %s", x_train.shape, x_test.shape)
+logging.info("Training target shape: %s, Test target shape: %s", y_train.shape, y_test.shape)
 
 # The trained model and data are now ready for reuse in other files (e.g., test.py).
