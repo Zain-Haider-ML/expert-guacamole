@@ -5,3 +5,5 @@ pylint
 pytest
 pytest-cov
 logging
+black
+isort

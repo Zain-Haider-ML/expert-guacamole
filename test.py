@@ -1,9 +1,13 @@
-from train import x_test, y_test, rf  # Import the test data and trained model from train.py
-from sklearn.metrics import accuracy_score  # For evaluating the model accuracy
 import logging  # For logging
 
+from sklearn.metrics import accuracy_score  # For evaluating the model accuracy
+
+from train import (rf,  # Import the test data and trained model from train.py
+                   x_test, y_test)
+
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
 
 def test_model():
     """
@@ -22,6 +26,7 @@ def test_model():
     logging.info("Model accuracy on test data: %.2f%%", accuracy * 100)
 
     # Assert if the accuracy is greater than a certain threshold, e.g., 80%
-    assert accuracy >= 0.90  
+    assert accuracy >= 0.90
+
 
 test_model()

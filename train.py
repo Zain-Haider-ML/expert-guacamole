@@ -1,10 +1,12 @@
 import logging
+
 from sklearn import datasets
-from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
 
 # Configure logging
-logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
+
 
 # Function to load the Wine dataset
 def load_dataset():
@@ -18,12 +20,13 @@ def load_dataset():
     # Load the Wine dataset
     logging.info("Loading Wine dataset...")
     ds = datasets.load_wine()
-    
+
     # Access the features (X) and target (Y)
     X = ds.data  # Feature matrix (attributes of the wines)
     Y = ds.target  # Target variable (labels representing wine classes)
-    
+
     return X, Y
+
 
 # Function to split the dataset into training and testing sets
 def split_data(x, y, test_size=0.2, random_state=42):
@@ -41,8 +44,9 @@ def split_data(x, y, test_size=0.2, random_state=42):
     """
     logging.info("Splitting data into training and test sets...")
     xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=test_size, random_state=random_state)
-    
+
     return xtrain, xtest, ytrain, ytest
+
 
 # Load dataset
 features, labels = load_dataset()
