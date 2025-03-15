@@ -12,7 +12,7 @@ def load_dataset():
     Loads the Wine dataset using sklearn's datasets module.
 
     Returns:
-        X (numpy arrayy): Feature matrix containing the attributes of the wines.
+        X (numpy array): Feature matrix containing the attributes of the wines.
         Y (numpy array): Target array containing the class labels for the wines.
     """
     # Load the Wine dataset
