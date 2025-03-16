@@ -9,19 +9,26 @@ trigger:
 pool: my-pc
 
 steps:
-  - script: |
-      python -m pip install --upgrade pip
-      pip install -r requirements.txt
-    displayName: 'Install dependencies'
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+    disableDownloadFromRegistry: true
+    addToPath: true
+    architecture: 'x64'
+  
+- script: |
+    python -m pip install --upgrade pip
+    pip install -r requirements.txt
+  displayName: 'Install dependencies'
 
-  - script: |
-      make format-check
-    displayName: 'Check code formatting'
+- script: |
+    make format-check
+  displayName: 'Check code formatting'
 
-  - script: |
-      make lint
-    displayName: 'Run linting'
+- script: |
+    make lint
+  displayName: 'Run linting'
 
-  - script: |
-      make test
-    displayName: 'Run tests with coverage'
+- script: |
+    make test
+  displayName: 'Run tests with coverage'
