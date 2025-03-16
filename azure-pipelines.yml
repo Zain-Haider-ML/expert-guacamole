@@ -10,10 +10,9 @@ pool: my-pc
 
 steps:
 - script: |
-    echo "Setting Python Path"
-    set PATH=C:\Users\hzain\AppData\Local\Programs\Python\Python313\;%PATH%
-    python --version
-  displayName: 'Set Python Path'
+    echo "Using Python from specific path"
+    "C:\Users\hzain\AppData\Local\Programs\Python\Python313\python.exe" --version  # Full path to python.exe
+  displayName: 'Verify Python Installation'
   
 - script: |
     python -m pip install --upgrade pip
