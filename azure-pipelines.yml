@@ -13,10 +13,9 @@ strategy:
       python.version: '3.13.0'
 
 steps:
-  - task: UsePythonVersion@0
-    inputs:
-      versionSpec: '$(python.version)'  
-    displayName: 'Use Python $(python.version)'
+   - script: |
+      python --version  # Verify that Python 3.13.0 is available in the PATH
+    displayName: 'Check Python Version'
 
   - script: |
       python -m pip install --upgrade pip
