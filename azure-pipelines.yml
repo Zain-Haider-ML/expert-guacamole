@@ -11,7 +11,7 @@ pool: my-pc
 steps:
 - script: |
     echo "Setting Python Path"
-    set PATH=C:\Users\hzain\AppData\Local\Programs\Python\Python313;%PATH%
+    set PATH=C:\Users\hzain\AppData\Local\Programs\Python\Python313\;%PATH%
     python --version
   displayName: 'Set Python Path'
   
