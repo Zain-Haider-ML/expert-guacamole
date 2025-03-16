@@ -7,7 +7,7 @@ trigger:
 - main
 
 pool:
-  vmImage: my-pc
+  vmImage: mytoken
 
 steps:
   - task: UsePythonVersion@0
