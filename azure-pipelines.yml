@@ -13,7 +13,7 @@ strategy:
       python.version: '3.13.0'
 
 steps:
-   - script: |
+  - script: |
       python --version  # Verify that Python 3.13.0 is available in the PATH
     displayName: 'Check Python Version'
 
