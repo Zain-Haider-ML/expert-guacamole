@@ -9,10 +9,11 @@ trigger:
 pool: my-pc
 
 steps:
-- script: |
-    echo "Using Python from specific path"
-    "C:\Users\hzain\AppData\Local\Programs\Python\Python313\python.exe" --version  # Full path to python.exe
-  displayName: 'Verify Python Installation'
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.13'  # Specify the Python version to use
+    addToPath: true
+  displayName: 'Use Python Version'
   
 - script: |
     python -m pip install --upgrade pip
