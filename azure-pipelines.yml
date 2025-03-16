@@ -7,6 +7,10 @@ trigger:
 - main
 
 pool: my-pc
+strategy:
+  matrix:
+    Python313:
+      python.version: '3.13.0'
 
 steps:
   - task: UsePythonVersion@0
