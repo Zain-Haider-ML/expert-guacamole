@@ -9,12 +9,11 @@ trigger:
 pool: my-pc
 
 steps:
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'
-    disableDownloadFromRegistry: true
-    addToPath: true
-    architecture: 'x64'
+- script: |
+    echo "Setting Python Path"
+    set PATH=C:\Users\hzain\AppData\Local\Programs\Python\Python313;%PATH%
+    python --version
+  displayName: 'Set Python Path'
   
 - script: |
     python -m pip install --upgrade pip
