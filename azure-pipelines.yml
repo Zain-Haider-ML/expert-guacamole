@@ -9,9 +9,9 @@ trigger:
 pool: my-pc
 
 steps:
- - script: |
-      python --version  # Verify system-installed Python version
-      where python  # Windows: Check Python path
+  - script: |
+      python --version 
+      where python  
     displayName: 'Check installed Python version'
 
   - script: |
