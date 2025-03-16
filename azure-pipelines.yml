@@ -10,10 +10,6 @@ pool: my-pc
 
 steps:
   - script: |
-     "C:\Users/hzain/AppData/Local/Programs/Python/Python313/python.exe" --version
-    displayName: 'Check Python Version'
-
-  - script: |
       python -m pip install --upgrade pip
       pip install -r requirements.txt
     displayName: 'Install dependencies'
