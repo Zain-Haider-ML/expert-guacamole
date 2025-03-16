@@ -9,9 +9,10 @@ trigger:
 pool: my-pc
 
 steps:
-  - script: |
-      C:\Users\hzain\AppData\Local\Programs\Python\Python313\python.exe --version  
-    displayName: 'Check installed Python version'
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python.version)'  
+    displayName: 'Use Python $(python.version)'
 
   - script: |
       python -m pip install --upgrade pip
