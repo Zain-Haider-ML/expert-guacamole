@@ -12,7 +12,6 @@ steps:
  - script: |
       python --version  # Verify system-installed Python version
       where python  # Windows: Check Python path
-      which python  # Linux/macOS: Check Python path
     displayName: 'Check installed Python version'
 
   - script: |
