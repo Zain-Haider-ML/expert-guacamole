@@ -10,8 +10,7 @@ pool: my-pc
 
 steps:
   - script: |
-      python --version 
-      where python  
+      C:\Users\hzain\AppData\Local\Programs\Python\Python313\python.exe --version  
     displayName: 'Check installed Python version'
 
   - script: |
