@@ -17,9 +17,9 @@ steps:
   entrypoint: 'bash'
   args: ['-c', 'apt-get update && apt-get install -y make']
 
-# - name: 'python'
-#   entrypoint: 'make'
-#   args: ['install']
+- name: 'python'
+  entrypoint: 'make'
+  args: ['install']
 
 - name: 'python'
   entrypoint: 'make'
