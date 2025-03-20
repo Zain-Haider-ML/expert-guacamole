@@ -9,12 +9,12 @@ steps:
   entrypoint: 'python'
   args: ['-m', 'pip', 'install', '--upgrade', 'pip']
 
-- name: 'python'
+- name: 'installing requirements'
   entrypoint: 'python'
   args: ['-m', 'pip', 'install', '-r', 'requirements.txt']
 
 - name: 'python'
-  entrypoint: 'python'
+  entrypoint: 'make'
   args: ['make', 'install']
 
 - name: 'python'
