@@ -2,20 +2,29 @@ options:
   logging: CLOUD_LOGGING_ONLY
 
 steps:
-- name: 'python:3.13-slim'
-  args: ['clone', 'https://github.com/Zain-Haider-ML/expert-guacamole.git']
+# - name: 'gcr.io/cloud-builders/git'
+#   args: ['clone', 'https://github.com/Zain-Haider-ML/expert-guacamole.git']
 
-- name: 'python:3.13-slim'
+- name: 'python'
+  entrypoint: 'python'
+  args: ['-m', 'pip', 'install', '--upgrade', 'pip']
+
+- name: 'python'
+  entrypoint: 'python'
   args: ['-m', 'pip', 'install', '-r', 'requirements.txt']
 
-- name: 'python:3.13-slim'
+- name: 'python'
+  entrypoint: 'python'
   args: ['make', 'install']
 
-- name: 'python:3.13-slim'
+- name: 'python'
+  entrypoint: 'python'
   args: ['make', 'lint']
 
-- name: 'python:3.13-slim'
+- name: 'python'
+  entrypoint: 'python'
   args: ['make', 'format']
 
-- name: 'python:3.13-slim'
+- name: 'python'
+  entrypoint: 'python'
   args: ['make', 'test']
