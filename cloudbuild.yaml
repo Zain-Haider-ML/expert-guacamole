@@ -19,7 +19,7 @@ steps:
 
 - name: 'python'
   entrypoint: 'make'
-  args: ['install']
+  args: ['install', 'lint']
 
 - name: 'python'
   entrypoint: 'make'
