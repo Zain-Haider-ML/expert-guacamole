@@ -47,27 +47,22 @@ def split_data(x, y, test_size=0.2, random_state=42):
 
     return xtrain, xtest, ytrain, ytest
 
-def train_model():
-    # Load dataset
-    features, labels = load_dataset()
 
-    # Split the data into training and test sets
-    x_train, x_test, y_train, y_test = split_data(features, labels)
+# Load dataset
+features, labels = load_dataset()
 
-    # Initialize the RandomForestClassifier model
-    rf = RandomForestClassifier(random_state=42)
+# Split the data into training and test sets
+x_train, x_test, y_train, y_test = split_data(features, labels)
 
-    # Train the Random Forest model on the training data
-    logging.info("Training RandomForestClassifier model...")
-    rf.fit(x_train, y_train)
+# Initialize the RandomForestClassifier model
+rf = RandomForestClassifier(random_state=42)
 
-    # Log the shapes of the split datasets (lazy formatting to resolve W1203)
-    logging.info("Training data shape: %s, Test data shape: %s", x_train.shape, x_test.shape)
-    logging.info("Training target shape: %s, Test target shape: %s", y_train.shape, y_test.shape)
+# Train the Random Forest model on the training data
+logging.info("Training RandomForestClassifier model...")
+rf.fit(x_train, y_train)
 
-    # The trained model and data are now ready for reuse in other files (e.g., test.py).
-    return rf, x_test, y_test
+# Log the shapes of the split datasets (lazy formatting to resolve W1203)
+logging.info("Training data shape: %s, Test data shape: %s", x_train.shape, x_test.shape)
+logging.info("Training target shape: %s, Test target shape: %s", y_train.shape, y_test.shape)
 
-
-if __name__ == "__main__":
-    trained_model, x_test, y_test = train_model()
+# The trained model and data are now ready for reuse in other files (e.g., test.py).
