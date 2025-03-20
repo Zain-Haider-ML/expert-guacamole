@@ -51,7 +51,7 @@ jobs:
     # Step 8: Build Docker image
     - name: Build Docker image
       run: |
-        docker build -t ghcr.io/${{ github.repository_owner }}/wine-recognition:${{ github.sha }} .
+        docker build -t ghcr.io/${{ github.repository_owner | toLowerCase }}/wine-recognition:${{ github.sha }} .
 
     # Step 9: Push Docker image to GitHub Container Registry
     - name: Push Docker image
