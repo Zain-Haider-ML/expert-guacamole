@@ -17,18 +17,18 @@ steps:
   entrypoint: 'bash'
   args: ['-c', 'apt-get update && apt-get install -y make']
 
+# - name: 'python'
+#   entrypoint: 'make'
+#   args: ['install']
+
 - name: 'python'
   entrypoint: 'make'
-  args: ['install']
+  args: ['lint']
 
 - name: 'python'
-  entrypoint: 'python'
-  args: ['make', 'lint']
+  entrypoint: 'make'
+  args: ['format']
 
 - name: 'python'
-  entrypoint: 'python'
-  args: ['make', 'format']
-
-- name: 'python'
-  entrypoint: 'python'
-  args: ['make', 'test']
+  entrypoint: 'make'
+  args: ['test']
