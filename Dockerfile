@@ -14,4 +14,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 # Set the command to run your app (make sure you replace with your actual Python file)
-CMD ["python", "train.py"]
+# CMD ["python", "train.py"]
+CMD ["python", "test.py"]
