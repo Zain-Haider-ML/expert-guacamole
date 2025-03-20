@@ -1,0 +1,21 @@
+steps:
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/Zain-Haider-ML/expert-guacamole.git']
+
+- name: 'python'
+  args: ['-m', 'pip', 'install', '--upgrade', 'pip']
+
+- name: 'python'
+  args: ['-m', 'pip', 'install', '-r', 'requirements.txt']
+
+- name: 'python'
+  args: ['make', 'install']
+
+- name: 'python'
+  args: ['make', 'lint']
+
+- name: 'python'
+  args: ['make', 'format']
+
+- name: 'python'
+  args: ['make', 'test']
