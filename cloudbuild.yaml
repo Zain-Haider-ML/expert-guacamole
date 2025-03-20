@@ -19,16 +19,16 @@ steps:
 
 - name: 'python'
   entrypoint: 'make'
-  args: ['install', 'lint']
+  args: ['install', 'lint', 'format', 'test']
 
-- name: 'python'
-  entrypoint: 'make'
-  args: ['lint']
+# - name: 'python'
+#   entrypoint: 'make'
+#   args: ['lint']
 
-- name: 'python'
-  entrypoint: 'make'
-  args: ['format']
+# - name: 'python'
+#   entrypoint: 'make'
+#   args: ['format']
 
-- name: 'python'
-  entrypoint: 'make'
-  args: ['test']
+# - name: 'python'
+#   entrypoint: 'make'
+#   args: ['test']
