@@ -16,3 +16,4 @@ COPY . .
 # Set the command to run your app (make sure you replace with your actual Python file)
 # CMD ["python", "train.py"]
 CMD ["python", "test.py"]
+CMD ["python", "app.py"]
