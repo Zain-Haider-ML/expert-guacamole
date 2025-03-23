@@ -1,3 +1,5 @@
+import joblib
+
 import logging
 
 from sklearn import datasets
@@ -64,5 +66,13 @@ rf.fit(x_train, y_train)
 # Log the shapes of the split datasets (lazy formatting to resolve W1203)
 logging.info("Training data shape: %s, Test data shape: %s", x_train.shape, x_test.shape)
 logging.info("Training target shape: %s, Test target shape: %s", y_train.shape, y_test.shape)
+
+# Save the trained model
+joblib.dump(rf, "model.pkl")
+logging.info("Model saved as model.pkl")
+
+# Save test data for API validation
+joblib.dump((x_test, y_test), "test_data.pkl")
+logging.info("Test data saved as test_data.pkl")
 
 # The trained model and data are now ready for reuse in other files (e.g., test.py).

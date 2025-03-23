@@ -7,3 +7,6 @@ pytest-cov
 logging
 black
 isort
+joblib
+flask
+locust
