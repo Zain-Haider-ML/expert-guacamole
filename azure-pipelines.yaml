@@ -1,0 +1,16 @@
+trigger:
+  - main  # Runs pipeline on push to 'main' branch
+
+pool: Newpool
+
+steps:
+
+  - script: |
+      python -m venv venv
+      venv\Scripts\activate
+      pip install -r requirements.txt
+    displayName: 'Install Dependencies'
+
+  - script: |
+      make test
+    displayName: 'Run Tests'
