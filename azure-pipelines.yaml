@@ -21,15 +21,7 @@ steps:
         choco install make -y
     displayName: 'Install Make'
 
-  - task: PowerShell@2
-    inputs:
-      targetType: 'inline'
-      script: |
-        $env:Path += ";C:\Program Files\GnuWin32\bin;C:\ProgramData\chocolatey\bin"
-        [System.Environment]::SetEnvironmentVariable("Path", $env:Path, [System.EnvironmentVariableTarget]::Machine)
-        refreshenv
-        make --version  # Check if make is available
-    displayName: 'Verify Make Installation'
+
 
   - task: UsePythonVersion@0
     inputs:
