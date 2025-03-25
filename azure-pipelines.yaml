@@ -22,5 +22,6 @@ steps:
     displayName: 'Install Dependencies'
 
   - script: |
-      make test
+      call venv\Scripts\activate
+      make lint
     displayName: 'Run Lint'
