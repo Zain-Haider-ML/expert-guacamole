@@ -1,7 +1,7 @@
 trigger:
   - main  # Runs pipeline on push to 'main' branch
 
-pool: Newpool
+pool: Newpool1
 
 steps:
 
