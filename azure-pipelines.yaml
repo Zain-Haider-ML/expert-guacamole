@@ -23,5 +23,5 @@ steps:
 
   - script: |
       call venv\Scripts\activate
-      make install
-    displayName: 'Run Lint'
+      make format
+    displayName: 'Run format'
