@@ -25,7 +25,7 @@ steps:
 
   - task: UsePythonVersion@0
     inputs:
-      versionSpec: '3.13.2'  # Use latest Python 3 version
+      versionSpec: '3.x'  # Use latest Python 3 version
       addToPath: true
 
   - script: |
