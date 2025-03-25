@@ -9,13 +9,13 @@ steps:
     inputs:
       targetType: 'inline'
       script: |
-        $pythonPath = "C:\Users\hzain\AppData\Local\Programs\Python\Python313"  # Update this path based on your installed Python version
+        $pythonPath = "C:\Users\hzain\AppData\Local\Programs\Python\Python313"
         $env:Path += ";$pythonPath;$pythonPath\Scripts"
-        echo "##vso[task.setvariable variable=Path;]$env:Path"
+        echo "##vso[task.setvariable variable=PythonPath;]$pythonPath"
     displayName: 'Set Up Python'
 
-
   - script: |
+      set PATH=%PythonPath%;%PythonPath%\Scripts;%PATH%
       python -m venv venv
       call venv\Scripts\activate
       python -m pip install --upgrade pip
