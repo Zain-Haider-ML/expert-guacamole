@@ -22,6 +22,7 @@ steps:
     displayName: 'Install Dependencies'
 
   - script: |
+      "C:\Users\hzain\AppData\Local\Programs\Python\Python313\python.exe" -m pip install pylint
       call venv\Scripts\activate
-      "C:\Users\hzain\AppData\Local\Programs\Python\Python313\python.exe" pylint --disable=R,C,no-member --max-line-length=120 train.py test.py
+      make lint
     displayName: 'Run lint'
