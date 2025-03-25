@@ -20,9 +20,6 @@ steps:
       "C:\Users\hzain\AppData\Local\Programs\Python\Python313\python.exe" -m pip install --upgrade pip
       "C:\Users\hzain\AppData\Local\Programs\Python\Python313\python.exe" -m pip install -r requirements.txt
     displayName: 'Install Dependencies'
-  
-  - script: ls -la
-    displayName: "Check files in pipeline"
 
   - script: |
       call venv\Scripts\activate
