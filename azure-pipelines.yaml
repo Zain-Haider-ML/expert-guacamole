@@ -23,5 +23,5 @@ steps:
 
   - script: |
       call venv\Scripts\activate
-      venv\Scripts\python -m pylint --disable=R,C,no-member --max-line-length=120 train.py test.py
+      make install
     displayName: 'Run Lint'
