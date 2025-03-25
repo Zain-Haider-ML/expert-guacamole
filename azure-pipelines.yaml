@@ -15,11 +15,10 @@ steps:
     displayName: 'Set Up Python'
 
   - script: |
-      set PATH=%PythonPath%;%PythonPath%\Scripts;%PATH%
-      python -m venv venv
+      "C:\Users\hzain\AppData\Local\Programs\Python\Python313\python.exe" -m venv venv
       call venv\Scripts\activate
-      python -m pip install --upgrade pip
-      python -m pip install -r requirements.txt
+      "C:\Users\hzain\AppData\Local\Programs\Python\Python313\python.exe" -m pip install --upgrade pip
+      "C:\Users\hzain\AppData\Local\Programs\Python\Python313\python.exe" -m pip install -r requirements.txt
     displayName: 'Install Dependencies'
 
   - script: |
