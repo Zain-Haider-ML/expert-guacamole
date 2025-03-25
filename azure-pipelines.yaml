@@ -23,5 +23,5 @@ steps:
 
   - script: |
       call venv\Scripts\activate
-      make format
-    displayName: 'Run format'
+      make lint
+    displayName: 'Run lint'
